@@ -1,8 +1,8 @@
 /** When the difference between functions is ONLY the data type,
  *  you want to define a function template where the data type
- * becomes a parameter to the function
- * and the compiler will instantiate copies of the function for
- * each data type that your program needs.
+ *  becomes a parameter to the function
+ *  and the compiler will instantiate copies of the function for
+ *  each data type that your program needs.
  */
  #include <iostream>
  #include <string>

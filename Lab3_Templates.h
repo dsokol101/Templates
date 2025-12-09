@@ -1,29 +1,37 @@
-#ifndef LAB2_H // Include guard to prevent multiple inclusions
-#define LAB2_H
+#ifndef LAB3_H 
+#define LAB3_H
 
 #include <string>
 #include <vector>
 #include <fstream>
 #include <iostream>
 #include <cstdlib>
-using namespace std;
+
+// swap_vals template function to be used in the sort_vec function
+template <typename T>
+void swap_vals(T &a, T &b)
+{
+    T temp = a;
+    a = b;
+    b = temp;
+}
 
 template <typename T>
-void print(const vector<T>& vec, string filename)  {
-    cout << "vector in print function: " << endl;
+void print(const std::vector<T>& vec)  {
+    //cout << "vector in print function: " << endl;
     for (auto it=vec.begin(); it<vec.end(); it++) {
-        cout << *it << " ";
+        std::cout << *it << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 }
 template <typename T>
-void load(vector<T>& myvec, string filename) 
+void load(std::vector<T>& myvec, std::string filename) 
 {
-    ifstream file(filename);
+    std::ifstream file(filename);
     
     if (!file.is_open())
     {
-        cerr << "Error opening file: " << filename << endl;
+        std::cerr << "Error opening file: " << filename << std::endl;
         exit(EXIT_FAILURE);
     }
     while (!file.eof())
@@ -36,7 +44,7 @@ void load(vector<T>& myvec, string filename)
 }
 /* sorts the elements in the vector names */
 template <typename E>
-void sort_vec(vector<E>& vec)
+void sort_vec(std::vector<E>& vec)
 {
     for (int i = 0; i < vec.size() - 1; i++)
     {
@@ -44,19 +52,10 @@ void sort_vec(vector<E>& vec)
         {
             if (vec[i] > vec[j])
             {
-                swap(vec[i], vec[j]);
+                swap_vals(vec[i], vec[j]);
             }
         }
     }
 }
-
-template <typename T>
-void swap(T &a, T &b)
-{
-    T temp = a;
-    a = b;
-    b = temp;
-}
-
 
 #endif

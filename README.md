@@ -1,7 +1,17 @@
 # Templates
 
-Code from class 5/8/2025 -- function templates (to be found in both templates.cpp and templatesV2.cpp)
+Code from class
 
-Code from class 5/12/2025 -- class templates (to be found in pair.h)
+function templates can be found in the files:
 
-app.cpp uses the pair class as well as the map class
+ - app0.cpp
+ - template_funcs.cpp
+ - Lab3_Templates.h and Lab3_Templates.cpp -- redone version of the earlier labs that you did this semester, using template functions
+
+class (struct) templates can be found in:
+
+- pair.h
+
+app.cpp uses the pair class as well as the map class of the STL
+
+See the repository of the SimpleVectorTemplate class to see another example of a template class.
